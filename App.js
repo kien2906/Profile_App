@@ -1,20 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import DrawerNavigator from "./src/navigation/Navigation";
+import ThemeContext from "./src/Context/ThemeContext";
+import FontSizeContext from "./src/Context/FontSizeContext";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeContext>
+      <FontSizeContext>
+        <DrawerNavigator />
+      </FontSizeContext>
+    </ThemeContext>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
